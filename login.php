@@ -242,8 +242,8 @@ Contact: allali.redha@gmail.com
     <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
     <!-- BEGIN CORE PLUGINS -->
     <!--[if lt IE 9]>
-<script src="../../plugins/respond.min.js"></script>
-<script src="../../plugins/excanvas.min.js"></script>
+<script src="plugins/respond.min.js"></script>
+<script src="plugins/excanvas.min.js"></script>
 <![endif]-->
     <script src="plugins/jquery.min.js" type="text/javascript"></script>
     <script src="plugins/jquery-migrate.min.js" type="text/javascript"></script>
@@ -255,7 +255,7 @@ Contact: allali.redha@gmail.com
 
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <script src="plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/plugins/select2/select2.min.js"></script>
+    <script type="text/javascript" src="plugins/select2/select2.min.js"></script>
     <!-- END PAGE LEVEL PLUGINS -->
 
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
