@@ -1,5 +1,5 @@
 <?php
-session_start(); // démarrage de la session AVANT toute chose
+ // session_start(); // démarrage de la session AVANT toute chose
 ?>
 
 <!DOCTYPE html>
@@ -10,17 +10,17 @@ session_start(); // démarrage de la session AVANT toute chose
     </head>
 
     <body>
-        <?php
+        <?php /*
             if ((isset($_SESSION['iduser'])) && (!empty($_SESSION['iduser'])))
             {
-                header("location:pages/start.php?page=dashboard");
+                header("location:/start.php?page=dashboard");
             }
             else
             {
-                header("location:pages/login.php");
-            }
+                header("location:/login.php");
+            } */
         ?>
 
-        Go to <a href="pages/login.php"> longin (pas de javascript)</a>
+        Go to <a href="login.php"> longin (pas de javascript)</a>
     </body>
 </html>
