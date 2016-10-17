@@ -1,5 +1,11 @@
 <?php
- // session_start(); // démarrage de la session AVANT toute chose
+
+  include ("content\include\dbconnexion.php");
+  session_start(); // démarrage de la session AVANT toute chose
+
+
+  $_SESSION["iduser"] = "";
+
 ?>
 
 <!DOCTYPE html>
@@ -10,15 +16,16 @@
     </head>
 
     <body>
-        <?php /*
+        <?php
             if ((isset($_SESSION['iduser'])) && (!empty($_SESSION['iduser'])))
             {
-                header("location:/start.php?page=dashboard");
+              //  header("location:/start.php?page=dashboard");
+              header("location:dashboard.html");
             }
             else
             {
-                header("location:/login.php");
-            } */
+                header("location:login.php");
+            }
         ?>
 
         Go to <a href="login.php"> longin (pas de javascript)</a>

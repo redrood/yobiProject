@@ -1,11 +1,8 @@
 <?php
-session_start();
-$error=''; // Variable To Store Error Message
-
-
-
-//session_destroy();
-?>
+ include ("content/include/var.php");
+ // include ("content/include/dbconnexion.php");
+ ?>
+ 
 
 <!DOCTYPE html>
 <!--
@@ -13,7 +10,8 @@ $error=''; // Variable To Store Error Message
 Version: 1.0.0
 Author: ALLALI Redha
 Contact: allali.redha@gmail.com
-
+Follow: www.twitter.com/xxxx
+Like: www.facebook.com/xxxx
 -->
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
@@ -25,7 +23,7 @@ Contact: allali.redha@gmail.com
 
 <head>
     <meta charset="utf-8" />
-    <title>yobiProject | Login </title>
+    <title>GPAV | Login </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- for edge compatibilities -->
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -38,7 +36,7 @@ Contact: allali.redha@gmail.com
     <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="plugins/simple-line-icons/simple-line-icons.css" rel="stylesheet" type="text/css" />
     <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<link href="plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />    
+	<link href="plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!-- BEGIN PAGE LEVEL STYLES -->
@@ -61,30 +59,37 @@ Contact: allali.redha@gmail.com
 <body class="login">
     <!-- BEGIN LOGO -->
     <div class="logo">
+        <a href="index.html">
             <img src="content/layout/img/logo_AT_w.png" alt="" />
+        </a>
     </div>
     <!-- END LOGO -->
-
     <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 
     <!-- END SIDEBAR TOGGLER BUTTON -->
-
     <!-- BEGIN LOGIN -->
     <div class="content">
         <!-- BEGIN LOGIN FORM -->
         <form class="login-form" action="index.html" method="post">
-            <h3 class="form-title">S'identifier </h3>
+            <h3 class="form-title">Connexion </h3>
+            <p>
+              <?php
+              
+              print_r (" dd");
+               ?>
+             </p>
+
             <div class="alert alert-danger display-hide">
                 <button class="close" data-close="alert"></button>
-                <span> 
-				Enter any username and password. </span>
+                <span>
+			Enter any username and password. </span>
             </div>
             <div class="form-group">
                 <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
                 <label class="control-label visible-ie8 visible-ie9">Username</label>
                 <div class="input-icon">
                     <i class="fa fa-user"></i>
-                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Adresse Email Pro" name="username" />
+                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Adresse e-mail pro" name="username" />
                 </div>
             </div>
             <div class="form-group">
@@ -96,32 +101,52 @@ Contact: allali.redha@gmail.com
             </div>
             <div class="form-actions">
                 <label class="checkbox">
-					<input type="checkbox" name="remember" value="1"/> Rester connecté 
-				</label>
-                <button type="submit" class="btn green-haze pull-right"> 
-					Login <i class="m-icon-swapright m-icon-white"></i>
-				</button>
+			<input type="checkbox" name="remember" value="1"/> Remember me </label>
+                <button type="submit" class="btn green-haze pull-right">
+			Login <i class="m-icon-swapright m-icon-white"></i>
+			</button>
             </div>
-           
-				<div class="forget-password">
-					<p> <a href="javascript:;" id="forget-password">
-					Mot de passe oublié ?</a> </p> 
-				</div>
-
-		<!--	<div class="create-account">
-					<p> ou <a href="javascript:;" id="register-btn">
-					Créer un compte  </a>
-					</p>
-				</div>     -->
-			
+            <div class="login-options">
+                <h4>Or login with</h4>
+                <ul class="social-icons">
+                    <li>
+                        <a class="facebook" data-original-title="facebook" href="javascript:;">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="twitter" data-original-title="Twitter" href="javascript:;">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="googleplus" data-original-title="Goole Plus" href="javascript:;">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="linkedin" data-original-title="Linkedin" href="javascript:;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="forget-password">
+                <h4>Forgot your password ?</h4>
+                <p>
+                    no worries, click <a href="javascript:;" id="forget-password">
+				here </a> to reset your password.
+                </p>
+            </div>
+            <div class="create-account">
+                <p>
+                    Don't have an account yet ?&nbsp; <a href="javascript:;" id="register-btn">
+				Create an account </a>
+                </p>
+            </div>
         </form>
         <!-- END LOGIN FORM -->
-
         <!-- BEGIN FORGOT PASSWORD FORM -->
         <form class="forget-form" action="index.html" method="post">
-            <h3>Mot de passe oublié ?</h3>
+            <h3>Forget Password ?</h3>
             <p>
-                Entrer votre adresse Email.
+                Enter your e-mail address below to reset your password.
             </p>
             <div class="form-group">
                 <div class="input-icon">
@@ -131,20 +156,18 @@ Contact: allali.redha@gmail.com
             </div>
             <div class="form-actions">
                 <button type="button" id="back-btn" class="btn">
-			<i class="m-icon-swapleft"></i> Retour </button>
+			<i class="m-icon-swapleft"></i> Back </button>
                 <button type="submit" class="btn green-haze pull-right">
-			Envoyer <i class="m-icon-swapright m-icon-white"></i>
+			Submit <i class="m-icon-swapright m-icon-white"></i>
 			</button>
             </div>
         </form>
         <!-- END FORGOT PASSWORD FORM -->
-
-
         <!-- BEGIN REGISTRATION FORM -->
         <form class="register-form" action="index.html" method="post">
-            <h3>Enregistrement</h3>
+            <h3>Sign Up</h3>
             <p>
-                Entrer vos details personels :
+                Enter your personal details below:
             </p>
             <div class="form-group">
                 <label class="control-label visible-ie8 visible-ie9">Full Name</label>
@@ -231,12 +254,11 @@ Contact: allali.redha@gmail.com
             </div>
         </form>
         <!-- END REGISTRATION FORM -->
-
     </div>
     <!-- END LOGIN -->
     <!-- BEGIN COPYRIGHT -->
     <div class="copyright">
-        2016 &copy; Business Development. Algerie Telecom.
+        2016 &copy; Algerie Telecom. Developpement d'Affaires.
     </div>
     <!-- END COPYRIGHT -->
     <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
