@@ -30,6 +30,8 @@ Like: www.facebook.com/xxxx
         <a href="index.html">
             <img src="content/layout/img/logo_AT_w.png" alt="" />
         </a>
+
+        <p>coucou  </p>
     </div>
 
 
